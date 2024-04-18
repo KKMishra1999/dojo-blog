@@ -1,5 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   // const title = "Welcome to the new blog";
@@ -8,15 +9,19 @@ function App() {
   // const link = "https://www.google.com";
 
   return (
-    <div className="App">
-      <Navbar/>
-      <div className="content">
-        <Home/>
-        {/* <p>Liked { likes } times</p>
-        <p>{ person.name }</p>
-        <a href={link}>Google site</a> */}
+    <Router>
+      <div className="App">
+        <Navbar/>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home/>} />
+          </Routes>
+          {/* <p>Liked { likes } times</p>
+          <p>{ person.name }</p>
+          <a href={link}>Google site</a> */}
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
